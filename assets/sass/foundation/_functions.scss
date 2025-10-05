@@ -1,0 +1,42 @@
+$projectMaxViewport: 1920;
+@function rclamp($value, $minSize: null) {
+  $max: $value;
+  $maxViewport: $projectMaxViewport; // ここで固定！
+  $minViewport: 768; // 縮小開始pxは固定でもよければここ
+  $scale: $max / $maxViewport;
+  $autoMin: $scale * $minViewport;
+  $min: if($minSize != null, $minSize, $autoMin);
+  $minRem: $min / 16;
+  $maxRem: $max / 16;
+  $scaleRem: $scale * 100;
+  @return clamp(#{$minRem}rem, #{$scaleRem}vw, #{$maxRem}rem);
+}
+@function rclamp-negative($value, $valueViewport, $minSize: null) {
+  $value-rem: $value / 16;
+  $start: 1360;
+  $end: 768;
+  $base: 1920;
+  $scale: $value / $valueViewport;
+  $ratio: $end / $base;
+  $min: $value * $ratio;
+  $min-rem: $min / 16;
+  $scaleRem: $scale * 100;
+  $slope: (
+    $min-rem - $value-rem) / ($start - $end) * 100;
+  @return clamp(#{$value-rem}rem, #{$scaleRem}vw, #{$min-rem}rem
+);
+}
+@function vw-sp($px, $base: 400) {
+  $num: if(unitless($px), $px, strip-unit($px));
+  $vw: $num / $base * 100;
+  @return #{$vw}vw;
+}
+:root {
+  --color-bg-beige: #f8ebdd;
+  --color-bg-brown: #47332f;
+  --color-text-brown: #894840;
+  --color-orange: #f39800;
+  --color-blue: #131855;
+  --bg-: #;
+  --bg-: #;
+}

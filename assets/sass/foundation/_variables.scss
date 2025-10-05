@@ -1,0 +1,50 @@
+@use "../foundation/mixin" as m;
+@use "../foundation/functions" as *;
+@font-face {
+  font-family: "yu-gothic-bold";
+  font-weight: bold;
+  src: url("../fonts/yu-gothic-bold.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "yu-gothic-medium";
+  font-weight: 500;
+  src: url("../fonts/yu-gothic-medium.otf") format("opentype");
+  font-style: normal;
+}
+:root {
+  --color-orange: #EA5F39;
+  --color-green: #3E4E4E;
+  --bg-beige-light: #FDE9C6;
+  --bg-beige-dark: #F2E8D7;
+  --bg-: #;
+}
+.font-akari{
+  font-family: "ads-akari", sans-serif;
+}
+.under-line_red{
+  text-decoration: underline;
+  text-decoration-color: var(--color-orange);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 12px;
+  @include m.mq(sp){
+    text-decoration-thickness: vw-sp(3);
+    text-underline-offset:vw-sp(6);
+  }
+}
+.under-line{
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 1px;
+  text-underline-offset: rclamp(8);
+  display: inline;
+  @include m.mq(sp){
+    text-underline-offset: vw-sp(2);
+  }
+}
+.color-orange{
+  color: var(--color-orange);
+}
+.bg-beige{
+  background-color: #ffe2af;
+}
