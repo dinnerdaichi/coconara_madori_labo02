@@ -220,6 +220,7 @@ input[type=tel] {
   border-radius: clamp(0.075rem, 0.15625vw, 0.1875rem);
   margin-bottom: clamp(0.4rem, 0.8333333333vw, 1rem);
   font-size: clamp(0.35rem, 0.7291666667vw, 0.875rem);
+  height: clamp(0.95rem, 1.9791666667vw, 2.375rem);
 }
 
 input[type=tel] {
