@@ -25,8 +25,8 @@
 .under-line_red{
   text-decoration: underline;
   text-decoration-color: var(--color-orange);
-  text-decoration-thickness: 4px;
-  text-underline-offset: 12px;
+  text-decoration-thickness: rclamp(4);
+  text-underline-offset:rclamp(12);
   @include m.mq(sp){
     text-decoration-thickness: vw-sp(3);
     text-underline-offset:vw-sp(6);

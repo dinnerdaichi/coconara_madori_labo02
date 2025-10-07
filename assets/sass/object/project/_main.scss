@@ -123,7 +123,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"] {
   width: 100%;
-  padding: rclamp(22);
+  padding: rclamp(10);
   border: 1px solid #999;
   border-radius: 3px;
   margin-bottom: rclamp(16);
@@ -186,7 +186,7 @@ input[type="checkbox"] {
   grid-template-columns: 1fr;
   place-items: center;
   position: relative;
-  border-radius: 20px;
+  border-radius: rclamp(20);
   padding-right: rclamp(40);
   letter-spacing: 0.05em;
 
@@ -224,13 +224,13 @@ input[type="checkbox"] {
   font-weight: bold;
   font-size: rclamp(36);
   text-align: center;
-  height: rclamp(124);
+  height: rclamp(100);
   padding-right: rclamp(60);
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
   position: relative;
-  border-radius: 20px;
+  border-radius: rclamp(20);
   letter-spacing: 0.02em;
 
   @include m.mq(sp) {
@@ -269,6 +269,10 @@ input[type="checkbox"] {
 .main-left {
   width: 100%;
   max-width: rclamp(1440);
+
+  @include m.mq(sp) {
+    max-width: 100%;
+  }
 }
 
 .section01 {
@@ -558,9 +562,22 @@ input[type="checkbox"] {
       }
 
       .under-line_red {
+
+        text-align: center;
+        /* width: 130px; */
+        display: inline-block;
+        border-bottom: rclamp(3) solid var(--color-orange);
+        line-height: 1.2;
+        padding-left: rclamp(3);
+        text-decoration: none;
+
         @include m.mq(sp) {
           text-decoration-thickness: vw-sp(2);
           text-underline-offset: vw-sp(6);
+        border-bottom: vw-sp(3) solid var(--color-orange);
+        padding-left: vw-sp(4)
+
+
         }
       }
     }
@@ -579,6 +596,7 @@ input[type="checkbox"] {
       padding-top: vw-sp(20);
       width: vw-sp(210);
       height: vw-sp(75);
+      font-size: vw-sp(27);
     }
   }
 
@@ -1173,6 +1191,12 @@ input[type="checkbox"] {
             padding-top: vw-sp(20);
             font-size: vw-sp(18);
           }
+
+          span {
+            // white-space: nowrap;
+            font-feature-settings: "palt";
+
+          }
         }
 
         span {
@@ -1191,7 +1215,7 @@ input[type="checkbox"] {
 
         img {
           width: rclamp(310);
-          margin-top: rclamp-negative(-60, 1920);
+          margin-top: rclamp-negative(-10, 1920);
           margin-left: rclamp(16);
 
           @include m.mq(sp) {
@@ -1276,18 +1300,27 @@ input[type="checkbox"] {
         @include m.mq(sp) {
           right: 7%;
           bottom: -32%;
+
         }
 
         p {
           font-size: rclamp(31);
           font-weight: bold;
           letter-spacing: 0.06em;
+
+          @include m.mq(sp){
+             font-size: vw-sp(12);
+          }
         }
 
         span {
           font-size: rclamp(25);
           color: #727171;
           font-weight: bold;
+
+          @include m.mq(sp){
+             font-size: vw-sp(10);
+          }
         }
       }
 
