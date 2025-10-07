@@ -163,12 +163,17 @@ input[type="checkbox"] {
 }
 
 .form-checkboxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: rclamp(18)rclamp(25);
+
   margin-bottom: rclamp(20);
   border-bottom: 1px solid black;
   padding-bottom: rclamp(24);
+
+  .nowrap{
+    display: flex;
+  flex-wrap: wrap;
+  gap: rclamp(18)rclamp(25);
+    white-space: nowrap;
+  }
 }
 
 .form-checkboxes label {
@@ -184,6 +189,7 @@ input[type="checkbox"] {
   align-items: center;
   gap: rclamp(6);
   margin-bottom: rclamp(40);
+  white-space: nowrap;
 }
 
 .submit-btn {
