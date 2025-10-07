@@ -83,14 +83,21 @@ p {
   width: 100%;
   max-width: rclamp(1920);
   margin-inline: auto;
+}
+
+.main__inner{
+
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
 
   @include m.mq(sp) {
     display: block;
   }
 }
+
 
 .form-wrapper {
   background-color: #f2dcaf;
@@ -98,11 +105,19 @@ p {
   padding-top: rclamp(60);
   height: 100%;
   color: var(--color-green);
-  letter-spacing: 0.04em;
+  // letter-spacing: 0.04em;
 }
 
 .form__content {
   height: 100%;
+}
+
+.form-flex{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: rclamp(2);
 }
 
 .form-title {
@@ -115,7 +130,7 @@ p {
 label {
   display: block;
   font-size: rclamp(20);
-  margin-bottom: 6px;
+  margin-bottom: rclamp(6);
   font-weight: 600;
 }
 
@@ -124,10 +139,10 @@ input[type="email"],
 input[type="tel"] {
   width: 100%;
   padding: rclamp(10);
-  border: 1px solid #999;
-  border-radius: 3px;
+  border: rclamp(1) solid #999;
+  border-radius: rclamp(3);
   margin-bottom: rclamp(16);
-  font-size: 14px;
+  font-size: rclamp(14);
 }
 
 input[type="tel"] {
@@ -150,7 +165,7 @@ input[type="checkbox"] {
 .form-checkboxes {
   display: flex;
   flex-wrap: wrap;
-  gap: rclamp(18)rclamp(15);
+  gap: rclamp(18)rclamp(25);
   margin-bottom: rclamp(20);
   border-bottom: 1px solid black;
   padding-bottom: rclamp(24);
@@ -160,14 +175,14 @@ input[type="checkbox"] {
   font-size: rclamp(19);
   display: flex;
   align-items: center;
-  gap: rclamp(14);
+  gap: rclamp(6);
 }
 
 .privacy {
   font-size: rclamp(18);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: rclamp(6);
   margin-bottom: rclamp(40);
 }
 
@@ -258,7 +273,7 @@ input[type="checkbox"] {
   width: rclamp(480);
   position: fixed;
   top: 0;
-  right: 0;
+  right: max(0px, calc((100vw - 1920px)/2));
   height: 100vh;
 
   @include m.mq(sp) {
@@ -1034,6 +1049,7 @@ input[type="checkbox"] {
 
         &:first-child {
           width: 100%;
+          white-space: nowrap;
         }
 
         &:last-child {
